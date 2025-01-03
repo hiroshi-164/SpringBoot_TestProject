@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>本の登録</title>
+</head>
+<body>
+    <h1>本の登録</h1>
+    <form action="/books/add" method="post">
+        <label for="bookTitle">本のタイトル:</label>
+        <input type="text" id="bookTitle" name="bookTitle" required><br>
+
+        <label for="writerName">著者名:</label>
+        <input type="text" id="writerName" name="writerName" required><br>
+
+        <label for="status">状態:</label>
+        <input type="text" id="status" name="status" required><br>
+
+        <button type="submit">登録</button>
+    </form>
+
+    <p th:if="${param.success}">登録が完了しました！</p>
+    <a href="/books/search">検索画面へ</a>
+</body>
+</html>
